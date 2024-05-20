@@ -33,6 +33,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/auth/**")
                 .permitAll()
+                .requestMatchers("/h2-ui/**")  // Permit all requests to the H2 console
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
